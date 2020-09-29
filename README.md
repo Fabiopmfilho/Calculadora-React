@@ -254,7 +254,7 @@ Neste desafio vocês deverão criar uma calculadora, contendo:
 Se sentir necessidade de modificar essa estrutura pode fazer, mas os componentes descritos acima DEVEM existir.
 
 #### Inicialização:
-- De um [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) no repositório: https://gitlab.com/acct.fateclab/turma-1-sem-2020/04-basico-dos-componentes;
+- De um [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) no repositório: https://gitlab.com/acct.fateclab/dev-turma-2-sem-2020/04-basico-dos-componentes;
 - Agora você deve clonar o repositório localmente, há um botão azul "Clone" no seu repositório do GitLab, clique nele e use a URL com **HTTPS**. 
 - Agora localmente abra uma pasta e use o botão direito do Mouse para abrir o "Git Bash", com esse atalho você chegará na pasta que quer mais rapidamente pelo terminal.
 - Use o comando `git clone url-copiada-do-gitlab` para que a estrutura de pastas do repositório seja clonada na sua pasta
