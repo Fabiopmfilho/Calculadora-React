@@ -13,9 +13,11 @@ Existem dois principais tipos:
 ```js
 import React from 'react'
 
-    const FATECLab = (props) => {
+const FATECLab = props => {
     return <h1>Hello, {props.name}</h1>
 }
+
+export default FATECLab
 ```
 
 ### Componentes de classe
@@ -26,11 +28,13 @@ Desta maneira você também pode renderizar uma [Classe ES6](https://developer.m
 ```js
 import React from 'react'
 
-    class Welcome extends React.Component {
+class Welcome extends React.Component {
     render() {
         return <h1>Hello, {this.props.name}</h1>
     }
 }
+
+export default Welcome
 ```
 
 ### Renderizando um Componente
@@ -43,6 +47,7 @@ const Welcome = (props) => {
 }
 
 const element = <Welcome name="ACCT" />
+
 ReactDOM.render(
   element,
   document.getElementById('root')
@@ -69,19 +74,19 @@ Além desses métodos, o [`constructor`](https://developer.mozilla.org/pt-BR/doc
 class Exemplo extends React.Component {
     constructor(props) {  
         super(props) // note que os "props" são passados para que o "constructor" envie-os para a classe que está a extendendo
-        {...}
+        // ...
     }
 
     componentDidMount() {
-        {...}
+        // ...
     }
 
     componentWillUnmount() {
-        {...}
+        // ...
     }
 
     render() {
-        {...}
+        // ...
     }
 }
 ```
@@ -115,7 +120,7 @@ class Exemplo extends React.Component {
         }
     }
 
-    {...}
+    // ...
 }
 ```
 
