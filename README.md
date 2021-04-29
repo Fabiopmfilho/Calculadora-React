@@ -4,22 +4,40 @@
     <img src="/desafio4/public/calc.png" alt="Calculadora">
 </h1>
 
-Componentes permitem você dividir a UI em partes independentes, reutilizáveis e pensar em cada parte isoladamente. São como métodos em JavaScript que retornam elementos React e podem receber parâmetros chamados de `props` que descrevem o que deve aparecer na tela.
+Calculadora desenvolvida com React
 
-Existem dois principais tipos:
 
-### Componentes de função
+### Selecionar Operação
 
-É a maneira mais simples de definir um componente:
+Função para selecionar e executar a operação matemática:
 
 ```js
-import React from 'react'
+setOperation(operation) {
+        if (this.state.current === 0) {
+            this.setState({ operation, current: 1, clearDisplay: true })
+        } else {
+            const equals = operation === '='
+            const currentOperation = this.state.operation
+            const values = [...this.state.values]
 
-const FATECLab = props => {
-    return <h1>Hello, {props.name}</h1>
-}
+            // try catch to decrease errors when calculating
+            try {
+                values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+            } catch (e) {
+                values[0] = this.state.values[0]
+            }
 
-export default FATECLab
+            values[1] = 0
+
+            this.setState({
+                displayValue: values[0],
+                operation: equals ? null : operation,
+                current: equals ? 0 : 1,
+                clearDisplay: !equals,
+                values
+            })
+        }
+    }
 ```
 
 ### Componentes de classe
