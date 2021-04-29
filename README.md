@@ -1,7 +1,11 @@
 # Calculadora com React
 
 <h1 align="center">
+<<<<<<< HEAD
     <img src="./calc.png" alt="Calculadora">
+=======
+    <img src="/desafio4/public/calc.png" alt="Calculadora">
+>>>>>>> f0baadb90e99354b2b5334d3bbbbda9922544de2
 </h1>
 
 Componentes permitem você dividir a UI em partes independentes, reutilizáveis e pensar em cada parte isoladamente. São como métodos em JavaScript que retornam elementos React e podem receber parâmetros chamados de `props` que descrevem o que deve aparecer na tela.
