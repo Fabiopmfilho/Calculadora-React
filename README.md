@@ -40,19 +40,27 @@ setOperation(operation) {
     }
 ```
 
-### Componentes de classe
-
-Desta maneira você também pode renderizar uma [Classe ES6](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes). Classes tem alguns recursos adicionais que nós discutiremos nas próximas seções. Até lá, nós usaremos componentes de função por serem mais sucintos.
-
+### Enviar valores para o display
 
 ```js
-import React from 'react'
+addDigit(n) {
+    if (n === '.' && this.state.displayValue.includes('.')) {
+        return
+    }
 
-class Welcome extends React.Component {
-    render() {
-        return <h1>Hello, {this.props.name}</h1>
+    const clearDisplay = this.state.displayValue === '0'
+        || this.state.clearDisplay
+    const currentValue = clearDisplay ? '' : this.state.displayValue
+    const displayValue = currentValue + n
+    this.setState({ displayValue, clearDisplay: false })
+
+    if (n !== '.') {
+        const i = this.state.current
+        const newValue = parseFloat(displayValue)
+        const values = [...this.state.values]
+        values[i] = newValue
+        this.setState({ values })
+        console.log(values)
     }
 }
-
-export default Welcome
 ```
